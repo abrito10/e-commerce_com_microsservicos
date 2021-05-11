@@ -35,3 +35,5 @@ out/
 
 ### VS Code ###
 .vscode/
+/docker/jenkins/jenkins_home/
+/docker/jenkins/jdks/
