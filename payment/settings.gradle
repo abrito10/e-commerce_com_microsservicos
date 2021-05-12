@@ -1,9 +1,7 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        //jcenter()
-        mavenCentral()
-
+        jcenter()
         maven {
             name "JCenter Gradle Plugins"
             url  "https://dl.bintray.com/gradle/gradle-plugins"
@@ -11,4 +9,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'checkout'
+rootProject.name = 'payment'

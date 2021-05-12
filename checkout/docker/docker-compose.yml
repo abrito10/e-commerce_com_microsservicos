@@ -10,7 +10,7 @@ services:
       POSTGRES_DB: checkout
     container_name: db-checkout
     ports:
-      - 5432:5432
+      - 5434:5434
   database-payment:
     image: postgres:latest
     environment:
@@ -19,7 +19,7 @@ services:
       POSTGRES_DB: payment
     container_name: db-payment
     ports:
-      - 5433:5432
+      - 5435:5434
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     hostname: zookeeper

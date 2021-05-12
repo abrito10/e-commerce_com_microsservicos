@@ -24,36 +24,22 @@ repositories {
 
 ext {
 	set('springCloudVersion', "2020.0.2")
-	set('cucumberVersion', '6.6.0')
-	set('testContainersVersion', '1.14.3')
-	set('wireMockVersion', '2.27.2')
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.data:spring-data-envers'
 	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
 	implementation 'org.springframework.cloud:spring-cloud-starter-stream-kafka'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.data:spring-data-envers'
 	implementation 'io.confluent:kafka-avro-serializer:5.5.0'
 	runtimeOnly 'org.postgresql:postgresql'
 	compileOnly 'org.projectlombok:lombok'
-	compile "org.apache.avro:avro:1.10.1"
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	testImplementation 'org.springframework.cloud:spring-cloud-stream-test-support'
-	testImplementation "io.cucumber:cucumber-spring:${cucumberVersion}"
-	testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
-	testImplementation "io.cucumber:cucumber-junit:${cucumberVersion}"
-	testCompileOnly 'org.projectlombok:lombok'
-	testAnnotationProcessor 'org.projectlombok:lombok'
-	testImplementation "org.testcontainers:testcontainers:${testContainersVersion}"
-	testImplementation "org.testcontainers:kafka:${testContainersVersion}"
-	testImplementation "org.testcontainers:postgresql:${testContainersVersion}"
-	testImplementation "com.github.tomakehurst:wiremock:${wireMockVersion}"
-	testImplementation "org.springframework.cloud:spring-cloud-contract-wiremock"
 }
 
 dependencyManagement {
@@ -71,9 +57,5 @@ avro {
 }
 
 generateAvroJava {
-	source 'src/main/resources/avro'
-}
-
-generateTestAvroJava {
 	source 'src/main/resources/avro'
 }
